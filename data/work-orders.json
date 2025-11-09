@@ -1,0 +1,50 @@
+[
+  {
+    "id": "6f2120a6-faaa-4699-8abe-cb07133e8eae",
+    "title": "Fix HVAC system in Building A",
+    "description": "The air conditioning unit is not cooling properly. Need to check refrigerant levels and inspect compressor.",
+    "priority": "High",
+    "status": "Open",
+    "updatedAt": "2025-11-09T12:33:41.616Z"
+  },
+  {
+    "id": "0643090b-3c6b-4db8-968d-7f304fc6b4c8",
+    "title": "Replace light bulbs in parking lot",
+    "description": "Multiple light fixtures in the north parking lot need new bulbs. Approximately 15 fixtures affected.",
+    "priority": "Medium",
+    "status": "In Progress",
+    "updatedAt": "2025-11-09T09:33:41.617Z"
+  },
+  {
+    "id": "d40d4760-235d-4338-a09f-40b70e962a61",
+    "title": "Repair broken door lock - Room 305",
+    "description": "The electronic lock on room 305 is malfunctioning. Users report difficulty accessing the room.",
+    "priority": "High",
+    "status": "Open",
+    "updatedAt": "2025-11-09T13:33:41.617Z"
+  },
+  {
+    "id": "8df98c6c-88c0-435f-9dca-4ef7c2a004d6",
+    "title": "Routine maintenance - Elevator inspection",
+    "description": "Quarterly elevator safety inspection and maintenance. All elevators in the main building.",
+    "priority": "Low",
+    "status": "Done",
+    "updatedAt": "2025-11-08T14:33:41.617Z"
+  },
+  {
+    "id": "095169e0-70da-4e98-ad1e-9ff79be4b425",
+    "title": "Plumbing leak in restroom",
+    "description": "Water leak detected under sink in 2nd floor restroom. Needs immediate attention to prevent water damage.",
+    "priority": "High",
+    "status": "In Progress",
+    "updatedAt": "2025-11-09T14:03:41.617Z"
+  },
+  {
+    "id": "2c2baefb-ebc4-487c-a490-1ed106620c26",
+    "title": "Paint hallway walls",
+    "description": "Repaint walls in main hallway. Need to coordinate with building manager for access during off-hours.",
+    "priority": "Low",
+    "status": "Open",
+    "updatedAt": "2025-11-07T14:33:41.617Z"
+  }
+]

@@ -24,3 +24,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+input,
+textarea {
+  @apply !text-gray-900 !font-medium;
+  color: #1f2937 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  @apply text-gray-400;
+}
