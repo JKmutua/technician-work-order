@@ -94,6 +94,7 @@ describe('WorkOrderForm', () => {
             fireEvent.click(highPriorityButton);
             fireEvent.click(submitButton);
 
+            // Wait for fetch to be called first
             await waitFor(() => {
                 expect(global.fetch).toHaveBeenCalledWith(
                     '/api/work-orders',
@@ -109,10 +110,12 @@ describe('WorkOrderForm', () => {
                 );
             });
 
+            // Then wait for navigation
             await waitFor(() => {
                 expect(mockPush).toHaveBeenCalledWith('/work-orders');
-                expect(mockRefresh).toHaveBeenCalled();
             });
+
+            expect(mockRefresh).toHaveBeenCalled();
         });
 
         it('displays validation errors from API', async () => {
@@ -131,7 +134,9 @@ describe('WorkOrderForm', () => {
             render(<WorkOrderForm mode="create" />);
 
             const titleInput = screen.getByLabelText(/work order title/i);
-            fireEvent.change(titleInput, { target: { value: 'A' } }); // Provide a short title to trigger server validation
+            const descriptionInput = screen.getByLabelText(/description/i);
+            fireEvent.change(titleInput, { target: { value: 'A' } });
+            fireEvent.change(descriptionInput, { target: { value: 'Test description' } });
 
             const submitButton = screen.getByRole('button', { name: /create work order/i });
             fireEvent.click(submitButton);
@@ -154,7 +159,9 @@ describe('WorkOrderForm', () => {
             render(<WorkOrderForm mode="create" />);
 
             const titleInput = screen.getByLabelText(/work order title/i);
+            const descriptionInput = screen.getByLabelText(/description/i);
             fireEvent.change(titleInput, { target: { value: 'Test Title' } });
+            fireEvent.change(descriptionInput, { target: { value: 'Test description' } });
 
             const submitButton = screen.getByRole('button', { name: /create work order/i });
             fireEvent.click(submitButton);
@@ -170,7 +177,9 @@ describe('WorkOrderForm', () => {
             render(<WorkOrderForm mode="create" />);
 
             const titleInput = screen.getByLabelText(/work order title/i);
+            const descriptionInput = screen.getByLabelText(/description/i);
             fireEvent.change(titleInput, { target: { value: 'Test Title' } });
+            fireEvent.change(descriptionInput, { target: { value: 'Test description' } });
 
             const submitButton = screen.getByRole('button', { name: /create work order/i });
             fireEvent.click(submitButton);
@@ -191,7 +200,9 @@ describe('WorkOrderForm', () => {
             render(<WorkOrderForm mode="create" />);
 
             const titleInput = screen.getByLabelText(/work order title/i);
+            const descriptionInput = screen.getByLabelText(/description/i);
             fireEvent.change(titleInput, { target: { value: 'Test Title' } });
+            fireEvent.change(descriptionInput, { target: { value: 'Test description' } });
 
             const submitButton = screen.getByRole('button', { name: /create work order/i });
             fireEvent.click(submitButton);
@@ -313,8 +324,9 @@ describe('WorkOrderForm', () => {
 
             await waitFor(() => {
                 expect(mockPush).toHaveBeenCalledWith('/work-orders');
-                expect(mockRefresh).toHaveBeenCalled();
             });
+
+            expect(mockRefresh).toHaveBeenCalled();
         });
 
         it('handles empty optional fields', () => {
@@ -367,7 +379,9 @@ describe('WorkOrderForm', () => {
             render(<WorkOrderForm mode="create" />);
 
             const titleInput = screen.getByLabelText(/work order title/i);
-            fireEvent.change(titleInput, { target: { value: 'T' } }); // Provide minimal value to pass HTML validation
+            const descriptionInput = screen.getByLabelText(/description/i);
+            fireEvent.change(titleInput, { target: { value: 'T' } });
+            fireEvent.change(descriptionInput, { target: { value: 'Test description' } });
 
             const submitButton = screen.getByRole('button', { name: /create work order/i });
             fireEvent.click(submitButton);
